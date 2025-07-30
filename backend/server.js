@@ -10,13 +10,13 @@ import cors from "@fastify/cors"
 
 dotenv.config()
 
+
+const fastify = Fastify({logger:true});
 fastify.register(cors,{
   origin: '*', 
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], 
   credentials: true 
 })
-
-const fastify = Fastify({logger:true});
 
 fastify.get('/', async (request, reply) => {
   return { message: 'Hello from Fastify ES module!' };
