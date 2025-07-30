@@ -65,8 +65,9 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="lg:hidden mt-4 flex flex-col gap-4">
           
-          {navLinks.map((link) => (
+          {navLinks.map((link,id) => (
               <Link
+              key={id}
                href={link.href}
               className="text-lg text-gray-500 hover:text-black transition"
               

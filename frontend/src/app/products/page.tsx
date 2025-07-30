@@ -33,7 +33,7 @@ const sampleData = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
@@ -142,4 +142,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
