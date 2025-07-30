@@ -4,13 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { LuCircleUser, LuMenu, LuX } from "react-icons/lu";
 import { IoSearch } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const router = useRouter();
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Shop", href: "/all-products" },
+    { name: "Shop", href: "/products" },
     { name: "About Us", href: "/" },
     { name: "Contact", href: "/" },
   ];
@@ -25,9 +26,11 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {navLinks.map((link,id) => (
             <Link
-              href="/"
+              key={id}
+              href={link.href}
+             
               className="text-lg text-gray-500 hover:text-black transition"
             >
               {link.name}
@@ -35,7 +38,7 @@ const Navbar = () => {
           ))}
 
           
-          <button className="border px-4 py-1.5 rounded-full text-sm hover:bg-gray-100">
+          <button onClick={()=>{router.push("/admin")}} className="border px-4 py-1.5 rounded-full text-sm hover:bg-gray-100">
             Seller Dashboard
           </button>
         </div>
@@ -64,9 +67,9 @@ const Navbar = () => {
           
           {navLinks.map((link) => (
               <Link
-              href="/"
+               href={link.href}
               className="text-lg text-gray-500 hover:text-black transition"
-              onClick={() => setIsMobileMenuOpen(false)}
+              
             >
               {link.name}
             </Link>

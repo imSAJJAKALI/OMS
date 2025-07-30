@@ -1,8 +1,9 @@
+
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-700 px-4 md:px-8 lg:px-16 py-10 mt-10">
+    <footer className="bg-gray-100 text-gray-700 px-4 md:px-8 lg:px-16 py-10 ">
       {/* Grid container */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
         {/* Column 1 */}
