@@ -6,8 +6,15 @@ import userRoutes from "./src/routes/userRoutes.js";
 import adminAuthRoutes from "./src/routes/adminAuthRoute.js";
 import adminProductsRoutes from "./src/routes/adminProductsRoutes.js";
 import orderRoutes from "./src/routes/orderRoutes.js";
+import cors from "@fastify/cors"
 
 dotenv.config()
+
+fastify.register(cors,{
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], 
+  credentials: true 
+})
 
 const fastify = Fastify({logger:true});
 
